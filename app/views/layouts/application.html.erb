@@ -5,12 +5,105 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+      <!-- Include the Boxicons CSS file from a CDN --><!-- Include the Boxicons CSS file from a different CDN -->
+     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
+     
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'main' %>
+
   </head>
 
   <body>
+     <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+<h1 class="logo me-auto"><%= link_to "Hair Styles", root_path %></h1>
+   <nav id="navbar" class="navbar navbar-toggleable-md">
+        <ul>
+          <li><%= link_to "Home", root_path, class: "active" %></li>
+          <li class="dropdown">
+            <%= link_to "#" do %>
+              <span>About</span> <i class="bi bi-chevron-down"></i>
+            <% end %>
+            <ul>
+              <li><%= link_to "About", about_path %></li>
+              <li><%= link_to "Team", team_path %></li>
+              <li><%= link_to "Testimonials", testimonials_path %></li>
+            </ul>
+          </li>
+          <li><%= link_to "Services", services_path %></li>
+          <li><%= link_to "Portfolio", portfolio_path %></li>
+          <li><%= link_to "Pricing", pricing_path %></li>
+          <li><%= link_to "Blog", blog_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+          <li><%= link_to "Get Started", root_path, class: "getstarted" %></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
     <%= yield %>
+    <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Hair Styles</h3>
+              <p>
+               Fortune Logix Inc,<br>
+               7-1-55-6 Suite: 201a,<br>
+               Sri Saikasi Mansions,<br>
+               Kirlampudi Layout,<br>
+               Vishakapatnam, 530003,<br>
+               Andhra Pradesh, India <br>
+               <br><br>
+               <strong>Email:</strong>hello@fortunelogics.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="" class="google-plus"><i class="bx bxl-skype"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i><%= link_to "Home", root_path %></li>
+              <li><i class="bx bx-chevron-right"></i><%= link_to "About Us", about_path %></li>
+              <li><i class="bx bx-chevron-right"></i><%= link_to "Services", services_path %></li>
+              <li><i class="bx bx-chevron-right"></i><%= link_to "Terms of service", terms_path %></li>
+              <li><i class="bx bx-chevron-right"></i> <%= link_to "Privacy policy", privacy_path %></li>
+            </ul>
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Hair Styles</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/sailor-free-bootstrap-theme/ -->
+        Designed by <a href="https://fortunelogics.com/">Fortune Logix Inc</a>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   </body>
 </html>
