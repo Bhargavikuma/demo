@@ -25,7 +25,7 @@
         <ul>
           <li><%= link_to "Home", root_path, class: "active" %></li>
           <li class="dropdown">
-            <%= link_to "#" do %>
+            <%= link_to "about" do %>
               <span>About</span> <i class="bi bi-chevron-down"></i>
             <% end %>
             <ul>
@@ -46,7 +46,11 @@
 
     </div>
   </header><!-- End Header -->
+<!-- Flash Message -->
 
+<% flash.each do |name,message| %>
+<% content_tag(:div, message, class:"alert alert-info  #{name}") %>
+<% end -%>
     <%= yield %>
     <footer id="footer">
     <div class="footer-top">
